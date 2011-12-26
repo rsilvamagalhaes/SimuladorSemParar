@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soaexpert.com.br/domain"
+	xmlns:tns="http://soaexpert.com.br/domain" elementFormDefault="qualified"
+	xmlns:Q1="http://soaexpert.com.br/domain">
+
+	<complexType name="Empresa">
+		<sequence>
+			<element name="id" type="integer"></element>
+			<element name="razaoSocial" type="string"></element>
+			<element name="nomeFantasia" type="string"></element>
+			<element name="cnpj" type="string"></element>
+			<element name="telefone" type="integer"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="NotaFiscal">
+		<sequence>
+			<element name="id" type="integer"></element>
+			<element name="descricao" type="string"></element>
+			<element name="empresa" type="Q1:Empresa" minOccurs="1"
+				maxOccurs="1"></element>
+			<element name="valor" type="double"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="Credito">
+		<sequence>
+			<element name="empresa" type="tns:Empresa"></element>
+			<element name="serasa" type="boolean"></element>
+			<element name="spc" type="boolean"></element>
+			<element name="casasBahia" type="boolean"></element>
+			<element name="aprovado" type="boolean"></element>
+			<element name="rejeitado" type="boolean"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="LoteEmpresa">
+		<sequence>
+			<element name="id" type="integer"></element>
+			<element name="empresa" type="tns:Empresa" minOccurs="1"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<element name="credito" type="tns:Credito"></element>
+	<element name="loteEmpresa" type="tns:LoteEmpresa"></element>
+
+</schema>
