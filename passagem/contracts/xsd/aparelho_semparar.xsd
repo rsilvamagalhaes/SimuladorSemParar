@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nostop.com.br/domain"
+	xmlns:tns="http://nostop.com.br/domain" elementFormDefault="qualified">
+	
+	<element name="aparelho_semparar" type="tns:aparelho_semparar"/>
+	<element name="aparelho_semparar_validation_result" type="tns:aparelho_semparar_validation_result"/>
+
+	<complexType name="aparelho_semparar">
+		<sequence>
+			<element name="codigo" type="string" />
+			<element name="descricao" type="string" />
+			<element name="data_emissao" type="dateTime" />
+		</sequence>
+	</complexType>
+	
+	
+	<complexType name="aparelho_semparar_validation_result">
+		<sequence>
+			<element name="isValid" type="boolean" />
+		</sequence>
+	</complexType>
+</schema>
