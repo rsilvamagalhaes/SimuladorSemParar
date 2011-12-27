@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://nostop.com.br/domain/passagem_pedagio_semparar" elementFormDefault="qualified" targetNamespace="http://nostop.com.br/domain/passagem_pedagio_semparar">
+
+	<element name="passagemEventoRequest" type="tns:PassagemEvento"/>
+	<element name="passagemEventoInputResponse" type="tns:PassagemEvento"/>
+	<complexType name="PassagemEvento">
+		<sequence>
+			<element name="codigoPedagio" type="string"/>
+			<element name="codigoCancela" type="string"/>
+			<element name="codigoAparelho" type="string"/>
+			<element name="dataPassagem" type="dateTime"/>
+			<element name="status" type="string"/>
+		</sequence>
+	</complexType>
+</schema>
