@@ -1,0 +1,147 @@
+<wsdl:definitions name="cliente"
+                  targetNamespace="http://simuladorsemparar.com.br/cliente/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:sxpt="http://simuladorsemparar.com.br/cliente/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <xsd:schema targetNamespace="http://simuladorsemparar.com.br/cliente/"
+              xmlns:Q1="http://simuladorsemparar.com.br/domain">
+   <xsd:import schemaLocation="../xsd/cliente.xsd"
+               namespace="http://simuladorsemparar.com.br/domain"/>
+   <xsd:element name="consultaclienteRequest">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="cpf" type="Q1:cliente.cpf"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+  <xsd:element name="consultaclienteResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="cpf" type="Q1:cliente"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   
+   <xsd:element name="validarclienteRequest">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="cliente" type="Q1:cliente"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="validarclienteResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="resultadovalidacao" type="Q1:resultadovalidacao"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   
+   <xsd:element name="cadastrarclienteRequest">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="cliente" type="Q1:cliente"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   
+   <xsd:element name="atualizarclienteRequest">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="cliente" type="Q1:cliente"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+  </xsd:schema>
+ </wsdl:types>
+ 
+ <wsdl:message name="consultaclienteRequest">
+  <wsdl:part element="sxpt:consultaclienteRequest" name="parameters"/>
+ </wsdl:message>
+ <wsdl:message name="consultaclienteResponse">
+  <wsdl:part element="sxpt:consultaclienteResponse" name="parameters"/>
+ </wsdl:message>
+ 
+ <wsdl:message name="validarclienteRequest">
+  <wsdl:part element="sxpt:validarclienteRequest" name="parameters"/>
+ </wsdl:message>
+ <wsdl:message name="validarclienteResponse">
+  <wsdl:part element="sxpt:validarclienteResponse" name="parameters"/>
+ </wsdl:message>
+ 
+ <wsdl:message name="cadastrarclienteRequest">
+  <wsdl:part element="sxpt:cadastrarclienteRequest" name="parameters"/>
+ </wsdl:message>
+
+ <wsdl:message name="atualizarclienteRequest">
+  <wsdl:part element="sxpt:atualizarclienteRequest" name="parameters"/>
+ </wsdl:message>
+
+ <wsdl:portType name="cliente">
+  <wsdl:operation name="consultacliente">
+   <wsdl:input message="sxpt:consultaclienteRequest"/>
+   <wsdl:output message="sxpt:consultaclienteResponse"/>
+  </wsdl:operation>
+  <wsdl:operation name="validarcliente">
+   <wsdl:input message="sxpt:validarclienteRequest"/>
+   <wsdl:output message="sxpt:validarclienteResponse"/>
+  </wsdl:operation>
+  
+  <wsdl:operation name="cadastrarcliente">
+   <wsdl:input message="sxpt:cadastrarclienteRequest"/>
+  </wsdl:operation>
+
+  <wsdl:operation name="atualizarcliente">
+   <wsdl:input message="sxpt:atualizarclienteRequest"/>
+  </wsdl:operation>  
+
+ </wsdl:portType>
+ 
+ <wsdl:binding name="clienteSOAP" type="sxpt:cliente">
+  <soap:binding style="document"
+                transport="http://schemas.xmlsoap.org/soap/http"/>
+
+  <wsdl:operation name="consultacliente">
+   <soap:operation soapAction="http://simuladorsemparar.com.br/cliente/consultacliente"/>
+   <wsdl:input>
+    <soap:body use="literal"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap:body use="literal"/>
+   </wsdl:output>
+  </wsdl:operation>
+
+  <wsdl:operation name="validarcliente">
+   <soap:operation soapAction="http://soaexpert.com.br/cliente/validarcliente"/>
+   <wsdl:input>
+    <soap:body use="literal"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap:body use="literal"/>
+   </wsdl:output>
+  </wsdl:operation>
+  
+    <wsdl:operation name="cadastrarcliente">
+   <soap:operation soapAction="http://soaexpert.com.br/cliente/cadastrarcliente"/>
+   <wsdl:input>
+    <soap:body use="literal"/>
+   </wsdl:input>
+  </wsdl:operation>
+
+   <wsdl:operation name="atualizarcliente">
+   <soap:operation soapAction="http://soaexpert.com.br/cliente/atualizarcliente"/>
+   <wsdl:input>
+    <soap:body use="literal"/>
+   </wsdl:input>
+  </wsdl:operation>
+  
+ </wsdl:binding>
+ <wsdl:service name="cliente">
+  <wsdl:port binding="sxpt:clienteSOAP" name="clienteSOAP">
+   <soap:address location="http://www.example.org/"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>
+
