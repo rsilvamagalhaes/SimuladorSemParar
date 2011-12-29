@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://simuladorsemparar.com.br/domain" elementFormDefault="qualified" targetNamespace="http://simuladorsemparar.com.br/domain">
+
+	<element name="cliente" type="tns:cliente"/>
+	<element name="mensagem" type="tns:resultadovalidacao"/>
+	
+	<complexType name="cliente">
+		<sequence>
+			<element name="id" type="integer"/>
+			<element name="codigocli" type="string"/>
+			<element name="nome" type="string"/>
+			<element name="datanasc" type="date"/>
+			<element maxOccurs="11" minOccurs="11" name="cpf" type="string"/>
+			<element maxOccurs="10" minOccurs="10" name="rg" type="string"/>
+			<element maxOccurs="10" minOccurs="10" name="telefone" type="integer"/>
+			<element maxOccurs="10" minOccurs="0" name="celular" type="integer"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="resultadovalidacao">
+		<sequence>
+			<element name="mensagem" type="string"/>
+                        <element name="isvalid" type="boolean"/>
+		</sequence>
+	</complexType>	
+
+</schema>

@@ -1,0 +1,16 @@
+#Wed Dec 28 13:27:45 BRST 2011
+eclipse.preferences.version=1
+encoding//src/br/com/simuladorsemparar/cliente/AtualizarclienteRequest.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/CadastrarclienteRequest.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/ClienteSOAPImpl.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/ClienteSOAPSkeleton.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/ClienteSOAPStub.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/Cliente_PortType.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/Cliente_Service.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/Cliente_ServiceLocator.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/ConsultaclienteRequest.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/ConsultaclienteResponse.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/ValidarclienteRequest.java=UTF-8
+encoding//src/br/com/simuladorsemparar/cliente/ValidarclienteResponse.java=UTF-8
+encoding//src/br/com/simuladorsemparar/domain/Cliente.java=UTF-8
+encoding//src/br/com/simuladorsemparar/domain/Resultadovalidacao.java=UTF-8
