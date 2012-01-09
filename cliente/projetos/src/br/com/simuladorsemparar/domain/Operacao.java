@@ -1,47 +1,47 @@
 /**
- * CadastrarclienteRequest.java
+ * Operacao.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.com.simuladorsemparar.cliente;
+package br.com.simuladorsemparar.domain;
 
-public class CadastrarclienteRequest  implements java.io.Serializable {
-    private br.com.simuladorsemparar.domain.Clienteoper clienteoper;
+public class Operacao  implements java.io.Serializable {
+    private java.lang.String nome;
 
-    public CadastrarclienteRequest() {
+    public Operacao() {
     }
 
-    public CadastrarclienteRequest(
-           br.com.simuladorsemparar.domain.Clienteoper clienteoper) {
-           this.clienteoper = clienteoper;
-    }
-
-
-    /**
-     * Gets the clienteoper value for this CadastrarclienteRequest.
-     * 
-     * @return clienteoper
-     */
-    public br.com.simuladorsemparar.domain.Clienteoper getClienteoper() {
-        return clienteoper;
+    public Operacao(
+           java.lang.String nome) {
+           this.nome = nome;
     }
 
 
     /**
-     * Sets the clienteoper value for this CadastrarclienteRequest.
+     * Gets the nome value for this Operacao.
      * 
-     * @param clienteoper
+     * @return nome
      */
-    public void setClienteoper(br.com.simuladorsemparar.domain.Clienteoper clienteoper) {
-        this.clienteoper = clienteoper;
+    public java.lang.String getNome() {
+        return nome;
+    }
+
+
+    /**
+     * Sets the nome value for this Operacao.
+     * 
+     * @param nome
+     */
+    public void setNome(java.lang.String nome) {
+        this.nome = nome;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof CadastrarclienteRequest)) return false;
-        CadastrarclienteRequest other = (CadastrarclienteRequest) obj;
+        if (!(obj instanceof Operacao)) return false;
+        Operacao other = (Operacao) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -50,9 +50,9 @@ public class CadastrarclienteRequest  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.clienteoper==null && other.getClienteoper()==null) || 
-             (this.clienteoper!=null &&
-              this.clienteoper.equals(other.getClienteoper())));
+            ((this.nome==null && other.getNome()==null) || 
+             (this.nome!=null &&
+              this.nome.equals(other.getNome())));
         __equalsCalc = null;
         return _equals;
     }
@@ -64,8 +64,8 @@ public class CadastrarclienteRequest  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getClienteoper() != null) {
-            _hashCode += getClienteoper().hashCode();
+        if (getNome() != null) {
+            _hashCode += getNome().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -73,14 +73,14 @@ public class CadastrarclienteRequest  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(CadastrarclienteRequest.class, true);
+        new org.apache.axis.description.TypeDesc(Operacao.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteRequest"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "operacao"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("clienteoper");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "clienteoper"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "clienteoper"));
+        elemField.setFieldName("nome");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "nome"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }

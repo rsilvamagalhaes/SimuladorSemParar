@@ -16,7 +16,7 @@ public class ClienteSOAPStub extends org.apache.axis.client.Stub implements br.c
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[4];
+        _operations = new org.apache.axis.description.OperationDesc[3];
         _initOperationDesc1();
     }
 
@@ -49,19 +49,12 @@ public class ClienteSOAPStub extends org.apache.axis.client.Stub implements br.c
         oper.setName("cadastrarcliente");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", "cadastrarclienteRequest"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteRequest"), br.com.simuladorsemparar.cliente.CadastrarclienteRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setReturnType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteResponse"));
+        oper.setReturnClass(br.com.simuladorsemparar.cliente.CadastrarclienteResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", "cadastrarclienteResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[2] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("atualizarcliente");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", "atualizarclienteRequest"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">atualizarclienteRequest"), br.com.simuladorsemparar.cliente.AtualizarclienteRequest.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
-        oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[3] = oper;
 
     }
 
@@ -94,16 +87,16 @@ public class ClienteSOAPStub extends org.apache.axis.client.Stub implements br.c
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">atualizarclienteRequest");
+            qName = new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteRequest");
             cachedSerQNames.add(qName);
-            cls = br.com.simuladorsemparar.cliente.AtualizarclienteRequest.class;
+            cls = br.com.simuladorsemparar.cliente.CadastrarclienteRequest.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteRequest");
+            qName = new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteResponse");
             cachedSerQNames.add(qName);
-            cls = br.com.simuladorsemparar.cliente.CadastrarclienteRequest.class;
+            cls = br.com.simuladorsemparar.cliente.CadastrarclienteResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -139,6 +132,27 @@ public class ClienteSOAPStub extends org.apache.axis.client.Stub implements br.c
             qName = new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "cliente");
             cachedSerQNames.add(qName);
             cls = br.com.simuladorsemparar.domain.Cliente.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "clienteoper");
+            cachedSerQNames.add(qName);
+            cls = br.com.simuladorsemparar.domain.Clienteoper.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "operacao");
+            cachedSerQNames.add(qName);
+            cls = br.com.simuladorsemparar.domain.Operacao.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "resultadocadastro");
+            cachedSerQNames.add(qName);
+            cls = br.com.simuladorsemparar.domain.Resultadocadastro.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -257,7 +271,7 @@ public class ClienteSOAPStub extends org.apache.axis.client.Stub implements br.c
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[1]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://soaexpert.com.br/cliente/validarcliente");
+        _call.setSOAPActionURI("http://simuladorsemparar.com.br/cliente/validarcliente");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -284,14 +298,14 @@ public class ClienteSOAPStub extends org.apache.axis.client.Stub implements br.c
 }
     }
 
-    public void cadastrarcliente(br.com.simuladorsemparar.cliente.CadastrarclienteRequest parameters) throws java.rmi.RemoteException {
+    public br.com.simuladorsemparar.cliente.CadastrarclienteResponse cadastrarcliente(br.com.simuladorsemparar.cliente.CadastrarclienteRequest parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://soaexpert.com.br/cliente/cadastrarcliente");
+        _call.setSOAPActionURI("http://simuladorsemparar.com.br/cliente/cadastrarcliente");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -300,28 +314,22 @@ public class ClienteSOAPStub extends org.apache.axis.client.Stub implements br.c
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        _call.invokeOneWay(new java.lang.Object[] {parameters});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {parameters});
 
-    }
-
-    public void atualizarcliente(br.com.simuladorsemparar.cliente.AtualizarclienteRequest parameters) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://soaexpert.com.br/cliente/atualizarcliente");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("", "atualizarcliente"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
-        _call.invokeOneWay(new java.lang.Object[] {parameters});
-
+        else {
+            extractAttachments(_call);
+            try {
+                return (br.com.simuladorsemparar.cliente.CadastrarclienteResponse) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (br.com.simuladorsemparar.cliente.CadastrarclienteResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.simuladorsemparar.cliente.CadastrarclienteResponse.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
 }

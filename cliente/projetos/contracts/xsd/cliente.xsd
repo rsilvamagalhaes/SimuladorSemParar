@@ -25,4 +25,11 @@
 		</sequence>
 	</complexType>	
 
+	<complexType name="resultadocadastro">
+		<sequence>
+			<element name="mensagem" type="string"></element>
+            <element name="cadastrook" type="boolean"></element>
+		</sequence>
+	</complexType>	
+
 </schema>

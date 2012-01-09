@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://simuladorsemparar.com.br/domain"
+	xmlns:tns="http://simuladorsemparar.com.br/domain" elementFormDefault="qualified">
+
+	<element name="operacao" type="tns:operacao"/>
+	
+	<complexType name="operacao">
+		<sequence>
+			<element name="nome" type="string"></element>
+		</sequence>
+	</complexType>	
+</schema>

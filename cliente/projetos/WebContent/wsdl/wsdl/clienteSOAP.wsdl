@@ -2,52 +2,54 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sxpt="http://simuladorsemparar.com.br/cliente/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="cliente" targetNamespace="http://simuladorsemparar.com.br/cliente/">
  <wsdl:types>
   <xsd:schema xmlns:Q1="http://simuladorsemparar.com.br/domain" targetNamespace="http://simuladorsemparar.com.br/cliente/">
-   <xsd:import namespace="http://simuladorsemparar.com.br/domain" schemaLocation="../xsd/cliente.xsd"/>
-   <xsd:element name="consultaclienteRequest">
-    <xsd:complexType>
-     <xsd:sequence>
-      <xsd:element name="cpf" type="xsd:string"/>
-     </xsd:sequence>
-    </xsd:complexType>
-   </xsd:element>
-  <xsd:element name="consultaclienteResponse">
-    <xsd:complexType>
-     <xsd:sequence>
-      <xsd:element name="cliente" type="Q1:cliente"/>
-     </xsd:sequence>
-    </xsd:complexType>
-   </xsd:element>
-   
-   <xsd:element name="validarclienteRequest">
-    <xsd:complexType>
-     <xsd:sequence>
-      <xsd:element name="cliente" type="Q1:cliente"/>
-     </xsd:sequence>
-    </xsd:complexType>
-   </xsd:element>
-   <xsd:element name="validarclienteResponse">
-    <xsd:complexType>
-     <xsd:sequence>
-      <xsd:element name="resultadovalidacao" type="Q1:resultadovalidacao"/>
-     </xsd:sequence>
-    </xsd:complexType>
-   </xsd:element>
-   
-   <xsd:element name="cadastrarclienteRequest">
-    <xsd:complexType>
-     <xsd:sequence>
-      <xsd:element name="cliente" type="Q1:cliente"/>
-     </xsd:sequence>
-    </xsd:complexType>
-   </xsd:element>
-   
-   <xsd:element name="atualizarclienteRequest">
-    <xsd:complexType>
-     <xsd:sequence>
-      <xsd:element name="cliente" type="Q1:cliente"/>
-     </xsd:sequence>
-    </xsd:complexType>
-   </xsd:element>
+  	<xsd:import namespace="http://simuladorsemparar.com.br/domain" schemaLocation="../xsd/cliente.xsd"/>
+  	<xsd:import namespace="http://simuladorsemparar.com.br/domain" schemaLocation="../xsd/clienteoperservice.xsd"/>
+  	
+  	<xsd:element name="consultaclienteRequest">
+  		<xsd:complexType>
+  			<xsd:sequence>
+  				<xsd:element name="cpf" type="xsd:string"/>
+  			</xsd:sequence>
+  		</xsd:complexType>
+  	</xsd:element>
+  	<xsd:element name="consultaclienteResponse">
+  		<xsd:complexType>
+  			<xsd:sequence>
+  				<xsd:element name="cliente" type="Q1:cliente"/>
+  			</xsd:sequence>
+  		</xsd:complexType>
+  	</xsd:element>
+
+  	<xsd:element name="validarclienteRequest">
+  		<xsd:complexType>
+  			<xsd:sequence>
+  				<xsd:element name="cliente" type="Q1:cliente"/>
+  			</xsd:sequence>
+  		</xsd:complexType>
+  	</xsd:element>
+  	<xsd:element name="validarclienteResponse">
+  		<xsd:complexType>
+  			<xsd:sequence>
+  				<xsd:element name="resultadovalidacao" type="Q1:resultadovalidacao"/>
+  			</xsd:sequence>
+  		</xsd:complexType>
+  	</xsd:element>
+
+  	<xsd:element name="cadastrarclienteRequest">
+  		<xsd:complexType>
+  			<xsd:sequence>
+  				<xsd:element name="clienteoper" type="Q1:clienteoper"/>
+  			</xsd:sequence>
+  		</xsd:complexType>
+  	</xsd:element>
+  	<xsd:element name="cadastrarclienteResponse">
+  		<xsd:complexType>
+  			<xsd:sequence>
+  				<xsd:element name="resultadocadastro" type="Q1:resultadocadastro"/>
+  			</xsd:sequence>
+  		</xsd:complexType>
+  	</xsd:element>
+
   </xsd:schema>
  </wsdl:types>
  
@@ -68,9 +70,8 @@
  <wsdl:message name="cadastrarclienteRequest">
   <wsdl:part element="sxpt:cadastrarclienteRequest" name="parameters"/>
  </wsdl:message>
-
- <wsdl:message name="atualizarclienteRequest">
-  <wsdl:part element="sxpt:atualizarclienteRequest" name="parameters"/>
+ <wsdl:message name="cadastrarclienteResponse">
+  <wsdl:part element="sxpt:cadastrarclienteResponse" name="parameters"/>
  </wsdl:message>
 
  <wsdl:portType name="cliente">
@@ -78,6 +79,7 @@
    <wsdl:input message="sxpt:consultaclienteRequest"/>
    <wsdl:output message="sxpt:consultaclienteResponse"/>
   </wsdl:operation>
+  
   <wsdl:operation name="validarcliente">
    <wsdl:input message="sxpt:validarclienteRequest"/>
    <wsdl:output message="sxpt:validarclienteResponse"/>
@@ -85,11 +87,8 @@
   
   <wsdl:operation name="cadastrarcliente">
    <wsdl:input message="sxpt:cadastrarclienteRequest"/>
+   <wsdl:output message="sxpt:cadastrarclienteResponse"/>
   </wsdl:operation>
-
-  <wsdl:operation name="atualizarcliente">
-   <wsdl:input message="sxpt:atualizarclienteRequest"/>
-  </wsdl:operation>  
 
  </wsdl:portType>
  
@@ -107,7 +106,7 @@
   </wsdl:operation>
 
   <wsdl:operation name="validarcliente">
-   <soap:operation soapAction="http://soaexpert.com.br/cliente/validarcliente"/>
+   <soap:operation soapAction="http://simuladorsemparar.com.br/cliente/validarcliente"/>
    <wsdl:input>
     <soap:body use="literal"/>
    </wsdl:input>
@@ -116,18 +115,14 @@
    </wsdl:output>
   </wsdl:operation>
   
-    <wsdl:operation name="cadastrarcliente">
-   <soap:operation soapAction="http://soaexpert.com.br/cliente/cadastrarcliente"/>
+  <wsdl:operation name="cadastrarcliente">
+   <soap:operation soapAction="http://simuladorsemparar.com.br/cliente/cadastrarcliente"/>
    <wsdl:input>
     <soap:body use="literal"/>
    </wsdl:input>
-  </wsdl:operation>
-
-   <wsdl:operation name="atualizarcliente">
-   <soap:operation soapAction="http://soaexpert.com.br/cliente/atualizarcliente"/>
-   <wsdl:input>
+   <wsdl:output>
     <soap:body use="literal"/>
-   </wsdl:input>
+   </wsdl:output>   
   </wsdl:operation>
   
  </wsdl:binding>

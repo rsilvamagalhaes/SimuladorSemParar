@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://simuladorsemparar.com.br/domain" elementFormDefault="qualified" targetNamespace="http://simuladorsemparar.com.br/domain">
+
+	<include schemaLocation="cliente.xsd"/>
+	<include schemaLocation="operacao.xsd"/>
+	
+	<element name="clienteoper" type="tns:clienteoper"/>
+
+	<complexType name="clienteoper">
+		<sequence>
+			<element name="cliente" type="tns:cliente"/>
+			<element name="operacao" type="tns:operacao"/>
+		</sequence>
+	</complexType>
+</schema>

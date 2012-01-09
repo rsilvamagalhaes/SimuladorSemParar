@@ -1,5 +1,5 @@
 /**
- * CadastrarclienteRequest.java
+ * CadastrarclienteResponse.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,41 +7,41 @@
 
 package br.com.simuladorsemparar.cliente;
 
-public class CadastrarclienteRequest  implements java.io.Serializable {
-    private br.com.simuladorsemparar.domain.Clienteoper clienteoper;
+public class CadastrarclienteResponse  implements java.io.Serializable {
+    private br.com.simuladorsemparar.domain.Resultadocadastro resultadocadastro;
 
-    public CadastrarclienteRequest() {
+    public CadastrarclienteResponse() {
     }
 
-    public CadastrarclienteRequest(
-           br.com.simuladorsemparar.domain.Clienteoper clienteoper) {
-           this.clienteoper = clienteoper;
-    }
-
-
-    /**
-     * Gets the clienteoper value for this CadastrarclienteRequest.
-     * 
-     * @return clienteoper
-     */
-    public br.com.simuladorsemparar.domain.Clienteoper getClienteoper() {
-        return clienteoper;
+    public CadastrarclienteResponse(
+           br.com.simuladorsemparar.domain.Resultadocadastro resultadocadastro) {
+           this.resultadocadastro = resultadocadastro;
     }
 
 
     /**
-     * Sets the clienteoper value for this CadastrarclienteRequest.
+     * Gets the resultadocadastro value for this CadastrarclienteResponse.
      * 
-     * @param clienteoper
+     * @return resultadocadastro
      */
-    public void setClienteoper(br.com.simuladorsemparar.domain.Clienteoper clienteoper) {
-        this.clienteoper = clienteoper;
+    public br.com.simuladorsemparar.domain.Resultadocadastro getResultadocadastro() {
+        return resultadocadastro;
+    }
+
+
+    /**
+     * Sets the resultadocadastro value for this CadastrarclienteResponse.
+     * 
+     * @param resultadocadastro
+     */
+    public void setResultadocadastro(br.com.simuladorsemparar.domain.Resultadocadastro resultadocadastro) {
+        this.resultadocadastro = resultadocadastro;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof CadastrarclienteRequest)) return false;
-        CadastrarclienteRequest other = (CadastrarclienteRequest) obj;
+        if (!(obj instanceof CadastrarclienteResponse)) return false;
+        CadastrarclienteResponse other = (CadastrarclienteResponse) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -50,9 +50,9 @@ public class CadastrarclienteRequest  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.clienteoper==null && other.getClienteoper()==null) || 
-             (this.clienteoper!=null &&
-              this.clienteoper.equals(other.getClienteoper())));
+            ((this.resultadocadastro==null && other.getResultadocadastro()==null) || 
+             (this.resultadocadastro!=null &&
+              this.resultadocadastro.equals(other.getResultadocadastro())));
         __equalsCalc = null;
         return _equals;
     }
@@ -64,8 +64,8 @@ public class CadastrarclienteRequest  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getClienteoper() != null) {
-            _hashCode += getClienteoper().hashCode();
+        if (getResultadocadastro() != null) {
+            _hashCode += getResultadocadastro().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -73,14 +73,14 @@ public class CadastrarclienteRequest  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(CadastrarclienteRequest.class, true);
+        new org.apache.axis.description.TypeDesc(CadastrarclienteResponse.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteRequest"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteResponse"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("clienteoper");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "clienteoper"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "clienteoper"));
+        elemField.setFieldName("resultadocadastro");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "resultadocadastro"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/domain", "resultadocadastro"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }

@@ -48,7 +48,7 @@ public class ClienteSOAPSkeleton implements br.com.simuladorsemparar.cliente.Cli
         _oper = new org.apache.axis.description.OperationDesc("validarcliente", _params, new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", "validarclienteResponse"));
         _oper.setReturnType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">validarclienteResponse"));
         _oper.setElementQName(new javax.xml.namespace.QName("", "validarcliente"));
-        _oper.setSoapAction("http://soaexpert.com.br/cliente/validarcliente");
+        _oper.setSoapAction("http://simuladorsemparar.com.br/cliente/validarcliente");
         _myOperationsList.add(_oper);
         if (_myOperations.get("validarcliente") == null) {
             _myOperations.put("validarcliente", new java.util.ArrayList());
@@ -57,25 +57,15 @@ public class ClienteSOAPSkeleton implements br.com.simuladorsemparar.cliente.Cli
         _params = new org.apache.axis.description.ParameterDesc [] {
             new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", "cadastrarclienteRequest"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteRequest"), br.com.simuladorsemparar.cliente.CadastrarclienteRequest.class, false, false), 
         };
-        _oper = new org.apache.axis.description.OperationDesc("cadastrarcliente", _params, null);
+        _oper = new org.apache.axis.description.OperationDesc("cadastrarcliente", _params, new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", "cadastrarclienteResponse"));
+        _oper.setReturnType(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">cadastrarclienteResponse"));
         _oper.setElementQName(new javax.xml.namespace.QName("", "cadastrarcliente"));
-        _oper.setSoapAction("http://soaexpert.com.br/cliente/cadastrarcliente");
+        _oper.setSoapAction("http://simuladorsemparar.com.br/cliente/cadastrarcliente");
         _myOperationsList.add(_oper);
         if (_myOperations.get("cadastrarcliente") == null) {
             _myOperations.put("cadastrarcliente", new java.util.ArrayList());
         }
         ((java.util.List)_myOperations.get("cadastrarcliente")).add(_oper);
-        _params = new org.apache.axis.description.ParameterDesc [] {
-            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", "atualizarclienteRequest"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://simuladorsemparar.com.br/cliente/", ">atualizarclienteRequest"), br.com.simuladorsemparar.cliente.AtualizarclienteRequest.class, false, false), 
-        };
-        _oper = new org.apache.axis.description.OperationDesc("atualizarcliente", _params, null);
-        _oper.setElementQName(new javax.xml.namespace.QName("", "atualizarcliente"));
-        _oper.setSoapAction("http://soaexpert.com.br/cliente/atualizarcliente");
-        _myOperationsList.add(_oper);
-        if (_myOperations.get("atualizarcliente") == null) {
-            _myOperations.put("atualizarcliente", new java.util.ArrayList());
-        }
-        ((java.util.List)_myOperations.get("atualizarcliente")).add(_oper);
     }
 
     public ClienteSOAPSkeleton() {
@@ -97,14 +87,10 @@ public class ClienteSOAPSkeleton implements br.com.simuladorsemparar.cliente.Cli
         return ret;
     }
 
-    public void cadastrarcliente(br.com.simuladorsemparar.cliente.CadastrarclienteRequest parameters) throws java.rmi.RemoteException
+    public br.com.simuladorsemparar.cliente.CadastrarclienteResponse cadastrarcliente(br.com.simuladorsemparar.cliente.CadastrarclienteRequest parameters) throws java.rmi.RemoteException
     {
-        impl.cadastrarcliente(parameters);
-    }
-
-    public void atualizarcliente(br.com.simuladorsemparar.cliente.AtualizarclienteRequest parameters) throws java.rmi.RemoteException
-    {
-        impl.atualizarcliente(parameters);
+        br.com.simuladorsemparar.cliente.CadastrarclienteResponse ret = impl.cadastrarcliente(parameters);
+        return ret;
     }
 
 }

@@ -32,9 +32,9 @@
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="http://simuladorsemparar.com.br/cliente/"
-        qname="ns:>atualizarclienteRequest"
-        type="java:br.com.simuladorsemparar.cliente.AtualizarclienteRequest"
+        xmlns:ns="http://simuladorsemparar.com.br/domain"
+        qname="ns:operacao"
+        type="java:br.com.simuladorsemparar.domain.Operacao"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
@@ -72,9 +72,33 @@
         encodingStyle=""
       />
       <typeMapping
+        xmlns:ns="http://simuladorsemparar.com.br/domain"
+        qname="ns:clienteoper"
+        type="java:br.com.simuladorsemparar.domain.Clienteoper"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://simuladorsemparar.com.br/cliente/"
+        qname="ns:>cadastrarclienteResponse"
+        type="java:br.com.simuladorsemparar.cliente.CadastrarclienteResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
         xmlns:ns="http://simuladorsemparar.com.br/cliente/"
         qname="ns:>cadastrarclienteRequest"
         type="java:br.com.simuladorsemparar.cliente.CadastrarclienteRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://simuladorsemparar.com.br/domain"
+        qname="ns:resultadocadastro"
+        type="java:br.com.simuladorsemparar.domain.Resultadocadastro"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
